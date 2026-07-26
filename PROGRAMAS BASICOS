@@ -1,0 +1,31 @@
+# AREA DE UN RECATANGULO, CGM.
+
+base = float (input ("INGRESA LA BASE:"))
+altura = float (input("INGRESA LA ALTURA:"))
+area = base * altura
+print ("EL AREA ES DEL RECTANGULO ES DE:", area)
+
+# PROMEDIO DE TRES NÚMEROS 
+num1 = float (input("INGRESE EL VALOR DEL PRIMER NÚMERO: "))
+num2 = float (input("INGRESE EL VALOR DEL SEGUNDO NÚMERO: "))
+num3 = float (input("INGRESE EL VALOR DEL TERCER NÚMERO: "))
+
+promedio = (num1 + num2 + num3) / 3
+
+print ("EL POMEDIO DE LOS NÚMEROS ES:", promedio)
+
+# CALCULAR IMC 
+peso = float (input("INGRESA TU PESO: "))
+altura = float (input("INGRESA TU ALTURA: "))
+imc = peso / (altura ** 2)
+print ("SU IMC ES DE: ", imc)
+
+# SALARIO NETO
+sb = float (input("INGRESA EL SALARIO BRUTO: "))
+porcentaje = float (input("INGRES EL PORCENTAJE: "))
+deducciones = float (input("INGRESA LAS DEDUCCIONES: "))
+
+impuestos = sb * (porcentaje / 100)
+sn = sb - impuestos - deducciones
+
+print ("EL SALARIO NETO ES DE: ", sn)
