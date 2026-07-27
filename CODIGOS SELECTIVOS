@@ -1,0 +1,146 @@
+#BRINDAR INFORMACIÓN, CGM
+consulta = input("Ingrese nombre de artista, película o serie: ").lower()
+match consulta:
+    case "inception":
+        info = "Película de ciencia ficción dirigida por Christopher Nolan."
+    case "beatles":
+        info = "Banda británica de rock formada en 1960."
+    case "rick and morty":
+        info = "Serie animada de comedia y ciencia ficción."
+    case "stranger things":
+        info = "Serie de terror y ciencia ficción de Netflix."
+    case "avengers":
+        info = "Película de superhéroes del MCU."
+    case _:
+        info = "No se encontró información."
+print("Información:", info)
+
+#CONVERTIDO DE MONEDAS, CGM
+cantidad = float(input("Cantidad en MXN: "))
+print("*Monedas: 1.USD 2.EUR 3.THB 4.JPY 5.KRW 6.AUD 7.PEN 8.CAD 9.VES 10.ARS*")
+opcion = int(input("Elige opción: "))
+
+match opcion:
+    case 1:
+        resultado = cantidad / 16.5
+        moneda = "USD"
+    case 2:
+        resultado = cantidad / 18.0
+        moneda = "EUR"
+    case 3:
+        resultado = cantidad / 0.45
+        moneda = "THB"
+    case 4:
+        resultado = cantidad / 0.12
+        moneda = "JPY"
+    case 5:
+        resultado = cantidad / 0.013
+        moneda = "KRW"
+    case 6:
+        resultado = cantidad / 11.5
+        moneda = "AUD"
+    case 7:
+        resultado = cantidad / 2.8
+        moneda = "PEN"
+    case 8:
+        resultado = cantidad / 8.2
+        moneda = "CAD"
+    case 9:
+        resultado = cantidad / 0.0023
+        moneda = "VES"
+    case 10:
+        resultado = cantidad / 0.046
+        moneda = "ARS"
+    case _:
+        print("Opción no válida")
+        resultado = None
+
+if resultado is not None:
+    print("El cambio es:", resultado, moneda)
+
+# TEMPERATURA, CGM
+celsius = float(input("Temperatura en °C: "))
+print("1. Fahrenheit\n2. Kelvin")
+opcion = int(input("Elige opción: "))
+
+match opcion:
+    case 1:
+        resultado = celsius * 9/5 + 32
+        unidad = "°F"
+    case 2:
+        resultado = celsius + 273.15
+        unidad = "K"
+    case _:
+        resultado = None
+        print("Opción inválida")
+
+if resultado is not None:
+    print("Convertido:", resultado, unidad)
+
+# DESCUENTO, CGM
+precio = float(input("Precio original: "))
+
+if precio <= 100:
+    descuento = 0
+elif precio <= 200:
+    descuento = 0.10
+elif precio <= 500:
+    descuento = 0.20
+else:
+    descuento = 0.25
+
+precio_final = precio - (precio * descuento)
+print("Precio con descuento:", precio_final)
+
+# EDAD, CGM
+
+edad = int(input("¿Cuál es tu edad? "))
+
+if edad >= 18:
+    print("Sí puede votar")
+else:
+    print("No puede votar")
+
+# NOTA FINAL, CGM
+parciales = float(input("Nota parciales (0-100): "))
+proyecto = float(input("Nota proyecto (0-100): "))
+examen = float(input("Nota examen final (0-100): "))
+
+if (parciales < 0 or parciales > 100) or (proyecto < 0 or proyecto > 100) or (examen < 0 or examen > 100):
+    print("Error: las notas deben estar entre 0 y 100")
+else:
+    nota_final = (parciales * 0.4) + (proyecto * 0.3) + (examen * 0.3)
+    print("Nota final:", nota_final)
+
+# CALIFICACIONES, CGM
+nota = float(input("Ingrese calificación (0-100): "))
+
+if nota >= 90:
+    letra = "A"
+elif nota >= 80:
+    letra = "B"
+elif nota >= 70:
+    letra = "C"
+elif nota >= 60:
+    letra = "D"
+else:
+    letra = "F"
+
+print("La calificación es:", letra)
+
+# ESTACIONES, CGM
+mes = int(input("Número de mes (1-12): "))
+
+match mes:
+    case 12 | 1 | 2:
+        estacion = "Invierno"
+    case 3 | 4 | 5:
+        estacion = "Primavera"
+    case 6 | 7 | 8:
+        estacion = "Verano"
+    case 9 | 10 | 11:
+        estacion = "Otoño"
+    case _:
+        estacion = "Mes inválido"
+
+print("Estación:", estacion)
