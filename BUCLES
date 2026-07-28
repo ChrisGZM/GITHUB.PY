@@ -1,0 +1,150 @@
+#MEDIA DE NUMEROS POSITIVOS, CGM
+suma = 0
+contador = 0
+while True:
+    num = float(input("Número positivo (negativo sale): "))
+    if num < 0:
+        break
+    if num > 0:
+        suma += num
+        contador += 1
+if contador > 0:
+    media = suma / contador
+    print("Media:", media)
+else:
+    print("No se ingresaron positivos")
+
+    #SECUENCIA ARITMETICA, CGM
+inicio = int(input("Primer número: "))
+diferencia = int(input("Diferencia: "))
+limite = int(input("Límite máximo: "))
+num = inicio
+while True:
+    print(num, end=" ")
+    num += diferencia
+    if num > limite:
+        break
+    print("\nSecuencia aritmética desde", inicio, "hasta", limite)
+
+    #FACTORIAL, CGM
+num = int(input("Número para factorial: "))
+factorial = 1
+if num < 0:
+    print("Factorial no definido para negativos")
+else:
+    for i in range(1, num + 1):
+        factorial *= i
+    print("El factorial de", num, "es:", factorial)
+
+    #VOCALES / NO VOCALES, CGM
+while True:
+    letra = input("Ingrese letra (Enter para terminar): ")
+    if letra == "":  # Busca una cadena vacía (solo dar Enter)
+        break
+    letra = letra.lower()
+    if letra in "aeiou":
+        print("Vocal")
+    else:
+        print("Consonante")
+print("Programa finalizado")
+
+#CONTAR LETRAS A, CGM
+palabra = input("Ingrese una palabra: ").lower()
+contador = 0
+for letra in palabra:
+    if letra == 'a':
+        contador += 1
+print("La letra 'a' aparece", contador, "veces")
+
+#CONTEO DE NÚMEROS, CGM
+n = int(input("Cantidad de números a ingresar: "))
+mayores = 0
+menores = 0
+iguales = 0
+for i in range(n):
+    num = int(input("Número: "))
+    if num > 0:
+        mayores += 1
+    elif num < 0:
+        menores += 1
+    else:
+        iguales += 1
+print("Mayores a 0:", mayores)
+print("Menores a 0:", menores)
+print("Iguales a 0:", iguales)
+
+#SECUENCIA DE CUADRADOS, CGM
+N = int(input("Número positivo: "))
+i = 1
+while True:
+    print(i ** 2)
+    i += 1
+    if i > N:
+        break
+print("Secuencia de cuadrados hasta", N)
+
+#CONTADOR DE DIGITOS, CGM
+num = int(input("Número entero: "))
+if num == 0:
+    digitos = 1
+else:
+    digitos = 0
+    if num < 0:
+        num = abs(num)
+    while num > 0:
+        num //= 10
+        digitos += 1
+print("El número tiene", digitos, "dígitos")
+
+#ADIVINAR NUMERO, CGM
+import random
+secreto = random.randint(1, 100)
+while True:
+    intento = int(input("Adivina (1-100): "))
+    if intento < secreto:
+        print("Demasiado bajo")
+    elif intento > secreto:
+        print("Demasiado alto")
+    else:
+        print("¡Correcto! Era", secreto)
+        break
+print("Juego terminado. El número era", secreto)
+
+#MULTIPLOS DE 3 Y 5, CGM
+print("Números divisibles por 3 y 5 (1-100):")
+for i in range(1, 101):
+    if i % 3 == 0 and i % 5 == 0:
+        print(i, end=" ")
+print()  # salto de línea final
+
+#CALCULADORA BÁSICA, CGM
+while True:
+    print("1.Suma 2.Resta 3.Multiplicación 4.División 5.Salir")
+    op = int(input("Opción: "))
+    if op == 5:
+        break
+    a = float(input("Primer número: "))
+    b = float(input("Segundo número: "))
+    match op:
+        case 1: print(a + b)
+        case 2: print(a - b)
+        case 3: print(a * b)
+        case 4:
+            if b != 0:
+                print(a / b)
+            else:
+                print("Error: división por cero")
+    resp = input("¿Desea continuar? (s/n): ").lower()
+    if resp == 'n':
+        break
+
+        #CONTADOR DE NÚMEROS IMPARES, CGM
+N = int(input("Número positivo: "))
+i = 1
+while True:
+    if i % 2 != 0:
+        print(i, end=" ")
+    i += 1
+    if i > N:
+        break
+print("\nFin. Se mostraron los impares hasta", N)
